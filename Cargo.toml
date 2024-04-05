@@ -1,0 +1,27 @@
+[package]
+name = "seven_up_seven_down"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# rand = "0.8.5"
+cosmwasm-std = "2.0.0"
+cw2 = "2.0.0"
+cw-storage-plus = "2.0.0"
+serde = "1.0.197"
+# getrandom = { version = "0.2", features = ["*"] }
+# thiserror = "1.0.31"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+panic = 'abort'
+incremental = false
+overflow-checks = true
